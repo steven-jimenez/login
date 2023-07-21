@@ -1,0 +1,123 @@
+/*INDEX*/
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 600px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 0.5px solid;
+    border-radius: 10px;
+    border-color: darkgrey;
+}
+
+.principal-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    padding-top: 1rem;
+}
+
+.logo_login{
+    display: flex;
+    justify-content: start;
+    padding-top: 50px;
+}
+
+.inputs{
+    display:flex;
+    flex-direction: column;
+    gap: 0.5rem;
+} 
+
+button{
+    background-color: #2F80ED;
+    color: white;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+}
+
+p{
+    font-weight:100;
+}
+
+.p1{
+   width: 340px;
+}
+
+.p2{
+    display: flex;
+    text-align: center;
+    font-size: smaller;
+    padding-top: 1rem;
+    padding-left: 4rem;
+    font-weight:initial;
+    color: #828282;
+}
+.p3{
+    display: flex;
+    text-align: center;
+    font-size: smaller;
+    padding-left: 6rem;
+    font-weight:initial;
+    color: #828282;
+}
+
+input{
+    height: 40px;
+    width:300px;
+    margin-left: 34px;
+    border: 1px solid;
+    border-left: none;
+    border-color: darkgrey;
+    border-top-right-radius:  10px;
+    border-bottom-right-radius:  10px;
+    position: relative;
+}
+
+.bi-envelope-fill{
+    padding-top: 12px;
+    position: absolute;
+    border: 1px solid;
+    border-color: darkgrey;
+    border-right: none;
+    border-top-left-radius:  10px;
+    border-bottom-left-radius:  10px;
+    height: 30px;
+    width: 40px;
+    display: flex;
+    justify-content: center;    
+    color: #828282;
+}
+
+.bi-lock-fill{
+    margin-top: 52px;
+    padding-top: 12px;
+    position: absolute;
+    border: 1px solid;
+    border-color: darkgrey;
+    border-right: none;
+    border-top-left-radius:  10px;
+    border-bottom-left-radius:  10px;
+    height: 30px;
+    width: 40px;
+    display: flex;
+    justify-content: center; 
+     color: #828282; 
+}
+
+.iconos{
+    padding-left: 5rem;
+}
