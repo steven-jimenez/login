@@ -1,21 +1,18 @@
-/*INDEX*/
 main{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
 }
 
 body {
     font-family: 'Noto Sans', sans-serif;
-    
 }
 
 .box{
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 360px;
     height: 600px;
     padding-left: 50px;
     padding-right: 50px;
@@ -29,24 +26,31 @@ body {
     flex-direction: column;
     align-items: center ;
     padding-top: 1rem;
+    
 }
 
 .logo_login{
     display: flex;
     justify-content: start;
     padding-top: 50px;
+    margin-bottom: 20px;
+}
+
+h3{
+    margin-bottom: 30px;
 }
 
 .inputs{
     display:flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 } 
 
 button{
     background-color: #2F80ED;
     color: white;
     height: 40px;
+    width: 340px;
     border-radius: 10px;
     border: none;
 }
@@ -105,7 +109,7 @@ input{
 }
 
 .bi-lock-fill{
-    margin-top: 52px;
+    margin-top: 60px;
     padding-top: 12px;
     position: absolute;
     border: 1px solid;
@@ -123,6 +127,7 @@ input{
 .iconos{
     padding-left: 5rem;
 }
+
 
 .link{
     color: #2D9CDB;

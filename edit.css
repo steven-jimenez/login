@@ -1,0 +1,150 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.toogle{
+    display: flex;
+    align-items: center;
+    gap:3px;
+}   
+
+.mini_img{
+    border: 2px solid;
+    width: 40px;
+    height: 40px;
+}
+
+.btn_back{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;  
+
+}
+
+.btn_back button{
+    display: flex;
+    align-items: center;
+    border: none;
+    color: #2D9CDB;
+    background-color: transparent;
+    font-size: larger;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 240px;
+    
+}
+
+section{
+        display: flex;
+        flex-direction: column;
+        border: 1px solid;
+        border-color: #E0E0E0;
+        width: 800px;
+        border-radius: 5px;
+        padding: 30px;
+}
+
+
+.tittle{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    
+}
+
+.tittle .p2{
+    margin-top: 4px;
+    font-weight: 100px;
+    color: #828282;
+
+}
+
+.tittle .p1{
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+
+.img{
+    display: flex;
+    margin: 10px;
+    margin-bottom: 30px;
+}
+
+.img p{
+    padding-top: 8px;
+    padding-left: 2rem;
+     color: #828282;
+}
+
+.img .imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    width: 72px;
+    height: 72px;
+}
+
+.imagen span{
+    color: #828282;
+}
+
+.inputs_edit{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+label{
+    margin-bottom: -15px;
+}
+
+.inputs_edit input{
+    border-radius: 12px;
+    border: 1px solid;
+    border-color: #828282;
+    width: 417px;
+    height: 64px;
+    padding-left: 1rem;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.inputs_edit .input_bio{
+    height: 114px;
+   width: 424px;
+   border-radius: 12px;
+    border: 1px solid;
+    border-color: #828282;
+    padding-top: 8px;
+    resize:none;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: small;
+    padding-left: 1rem;
+
+}
+
+.inputs_edit button{
+    width: 80px;
+    height: 36px;
+    border: none;
+    border-radius: 12px;
+    background-color: #2D9CDB;
+    color: white;
+    font-weight: 400;
+    font-size: large;
+}

@@ -100,7 +100,7 @@
                         </i>
                     </div>
 
-                    <p class="p3">Adready a member? <a>Login</a></p>
+                    <p class="p3">Adready a member? <a class="link" href="login.php" style="color: #2D9CDB; text-decoration:none;">Login</a></p>
                 </div>
 
             </div>

@@ -39,9 +39,16 @@ main{
 
 }
 
+
 .titulo_info{
     font-size: 36px;
-    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.box_info .h2 {
+    color: #828282;
+    margin-top: -8px;
+
 }
 
 .box_info{

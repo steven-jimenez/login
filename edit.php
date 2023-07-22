@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./register.css" rel="stylesheet">
+    <link href="./edit.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
-    <title>Register</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Edit Profile</title>
 </head>
 
 <body>
@@ -39,81 +39,50 @@
 
         </div>
     </header>
+
     <main>
-
-        <div class="tittle">
-            <p class="titulo_info">Personal info</p>
-            <p>Basic info, like your name and photo</p>
-        </div>
-        <form action="edit.php" method="post">
-            <div class="box_info">
-                <div class="info1">
-                    <div>
-                        <h1>Profile</h1>
-                        <p class="h2">Some info may be visible to other people</p>
-                    </div>
-                    <button type="submit">Edit</button>
-                </div>
+        <form action="register.php" method="post">
+            <div class="btn_back">
+                <button><span class="material-symbols-outlined">
+                        arrow_back_ios
+                    </span> Back</button>
+            </div>
         </form>
+        <section>
+            <div class="tittle">
+                <p class="p1">Change Info</p>
+                <p class="p2">Changes will be reflected to every services</p>
+            </div>
 
-        <div class="info2">
-            <p class="p1">PHOTO</p>
-            <img></img>
-        </div>
+            <div class="img">
+                <span class="imagen"><span class="material-symbols-outlined">
+                        photo_camera
+                    </span></span>
+                <p>CHANGE PHOTO</p>
+            </div>
+            <form action="register.php" method="post">
+                <div class="inputs_edit">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name...">
 
-        <div class="info3">
-            <p class="p1">NAME</p>
-            <?php print_r($username) ?>
-        </div>
+                    <label for="bio">Bio</label>
+                    <textarea class="input_bio" placeholder=" Enter your bio..."></textarea>
 
-        <div class="info4">
-            <p class="p1">BIO</p>
-            <?php print_r($bio) ?>
-        </div>
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Enter your phone...">
 
-        <div class="info5">
-            <p class="p1">PHONE</p>
-            <?php print_r($phone) ?>
-        </div>
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your email...">
 
-        <div class="info6">
-            <p class="p1">EMAIL</p>
-            <?php print_r($email) ?>
-        </div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password...">
 
-        <div class="info7">
-            <p class="p1">PASSWORD</p>
-            <?php print_r($password) ?>
-        </div>
-        </div>
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </section>
     </main>
-
 
 </body>
 
 </html>
-
-
-<?php
-// Crea la conexion con la BD
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    try {
-        $mysqli = new mysqli("localhost", "root", "", "mn-php");
-    } catch (mysqli_sql_exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-//Recupera los datos del formulario
-$password = $_POST['password'];
-$email = $_POST['email'];
-
-//Inserta los datos en la base de datos
-$query = "INSERT INTO usuarios (`email`, `password`) VALUES ('$email', '$password')";
-
-// Ejecuccion del Query
-$resultado = $mysqli->query($query);
-
-print_r($resultado);
-
-?>
