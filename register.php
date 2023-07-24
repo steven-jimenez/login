@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (empty($_SESSION["id"])) {
-    header("location: login.php");
-}
+//if (empty($_SESSION["id"])) {
+//   header("location: login.php");
+//}
 
 ?>
 
@@ -67,31 +67,36 @@ if (empty($_SESSION["id"])) {
 
         <div class="info2">
             <p class="p1">PHOTO</p>
-            <img></img>
+            <img><?php echo $_SESSION["photo"] ?></img>
         </div>
 
         <div class="info3">
             <p class="p1" name="username">NAME</p>
+            <p><?php echo $_SESSION["username"] ?></p>
 
         </div>
 
         <div class="info4">
             <p class="p1" name="bio">BIO</p>
+            <p><?php echo $_SESSION["bio"] ?></p>
 
         </div>
 
         <div class="info5">
             <p class="p1" name="phone">PHONE</p>
+            <p><?php echo $_SESSION["phone"] ?></p>
 
         </div>
 
         <div class="info6">
             <p class="p1" name="email">EMAIL</p>
+            <p><?php echo $_SESSION["email"] ?></p>
 
         </div>
 
         <div class="info7">
             <p class="p1" name="password">PASSWORD</p>
+            <p><?php echo $_SESSION["password"] ?></p>
 
         </div>
         </div>
