@@ -1,12 +1,10 @@
 <?php
 session_start();
-
-$_SESSION['userName'] = "$username";
-
-include 'conexion.php';
+if (empty($_SESSION["id"])) {
+    header("location: login.php");
+}
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -46,7 +44,7 @@ include 'conexion.php';
         </div>
         <div class="toogle">
             <div class="mini_img"></div>
-            <p><?php $username["username"] ?></p><i class="bi bi-caret-down-fill"></i>
+            <p><?php echo $_SESSION["username"]; ?></p><i class="bi bi-caret-down-fill"></i>
 
         </div>
     </header>
@@ -73,28 +71,28 @@ include 'conexion.php';
         </div>
 
         <div class="info3">
-            <p class="p1">NAME</p>
-            <?php print_r($username) ?>
+            <p class="p1" name="username">NAME</p>
+
         </div>
 
         <div class="info4">
-            <p class="p1">BIO</p>
-            <?php print_r($bio) ?>
+            <p class="p1" name="bio">BIO</p>
+
         </div>
 
         <div class="info5">
-            <p class="p1">PHONE</p>
-            <?php print_r($phone) ?>
+            <p class="p1" name="phone">PHONE</p>
+
         </div>
 
         <div class="info6">
-            <p class="p1">EMAIL</p>
-            <?php print_r($email) ?>
+            <p class="p1" name="email">EMAIL</p>
+
         </div>
 
         <div class="info7">
-            <p class="p1">PASSWORD</p>
-            <?php print_r($password) ?>
+            <p class="p1" name="password">PASSWORD</p>
+
         </div>
         </div>
     </main>

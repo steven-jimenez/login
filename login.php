@@ -1,35 +1,3 @@
-<?php
-session_start();
-
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    require_once "conexion.php"; // se incluye el archivo de conexión a la base de datos...
-
-    // se recuperan los datos del formulario...
-    $email = $_POST["email_user"];
-    $password = $_POST["password-user"];
-
-    // Validación de datos...
-    if (empty($email) || empty($password)) {
-        echo "Por favor, completa todos los campos.";
-    } else {
-        // Buscar el usuario en la base de datos por su email...
-        $query = "SELECT * FROM usuarios WHERE email='$email'";
-        $result = $mysqli->query($query);
-
-        if ($result->num_rows === 1) {
-            // Verificacion de usuarios...
-            $user = $result->fetch_assoc();
-            if (password_verify($password, $user["password_user"])) {
-            } else {
-                echo "Usuario no encontrado.";
-            }
-        }
-    }
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,14 +35,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </svg>
                 </div>
                 <h3><b>Login</b></h3>
-                <form action="register.php" method="POST">
+                <?php
+                include 'LG.php';
+                include 'conexion.php';
+                ?>
+                <form action="" method="POST">
                     <div class="inputs">
 
                         <i class="bi bi-envelope-fill"></i>
                         <input class="e_mail" type="text" name="email_user" required placeholder="Email">
                         <i class="bi bi-lock-fill"></i>
                         <input class="password" type="password" name="password_user" required placeholder="Password">
-                        <button type="submit" name="login" class="btn_lg"><b>Login</b></button>
+                        <button type="submit" name="btn_login" class="btn_lg"><b>Login</b></button>
 
                     </div>
                 </form>

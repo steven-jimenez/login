@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-$_SESSION['userName'] = "$username";
-
-include 'conexion.php';
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +40,7 @@ include 'conexion.php';
         </div>
         <div class="toogle">
             <div class="mini_img"></div>
-            <p><?php $username["username"] ?></p><i class="bi bi-caret-down-fill"></i>
+            <p><?php echo $_SESSION["username"]; ?></p><i class="bi bi-caret-down-fill"></i>
 
         </div>
     </header>
