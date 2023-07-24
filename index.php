@@ -1,3 +1,33 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    include "conexion.php"; // se incluye el archivo de conexión a la base de datos...
+
+    // se recuperan los datos del formulario...
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    // Validación de datos...
+    if (empty($email) || empty($password)) {
+        echo "Por favor, completa todos los campos.";
+    } else {
+        // Hash de la contraseña...
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Insertar los datos en la base de datos...
+        $query = "INSERT INTO usuarios (email, password) VALUES ('$email', '$hashed_password')";
+
+        if ($mysqli->query($query)) {
+            echo "Registro exitoso. Ahora puedes iniciar sesión.";
+        } else {
+            echo "Error al registrar el usuario: " . $mysqli->error;
+        }
+    }
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,13 +67,13 @@
                 <h3><b>Join thousands of learners from around the world<b></h3>
                 <div class="p1">
                     <p>Master web development by making real-life projects. There are multiple paths for you to choose</p>
-                    <form action="register.php" method="post">
+                    <form action="register.php" method="POST">
                         <div class="inputs">
 
                             <i class="bi bi-envelope-fill"></i>
-                            <input class="e_mail" type="text" id="email1" name="email" required placeholder="Email">
+                            <input class="e_mail" type="text" name="email" required placeholder="Email">
                             <i class="bi bi-lock-fill"></i>
-                            <input class="password" type="password" id="password1" name="password" required placeholder="Password">
+                            <input class="password" type="password" name="password" required placeholder="Password">
                             <button type="submit" class="btn_lg"><b>Star coding now</b></button>
 
                         </div>

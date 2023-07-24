@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+$_SESSION['userName'] = "$username";
+
+include 'conexion.php';
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +46,7 @@
         </div>
         <div class="toogle">
             <div class="mini_img"></div>
-            <p>lalo rodriguez</p><i class="bi bi-caret-down-fill"></i>
+            <p><?php $username["username"] ?></p><i class="bi bi-caret-down-fill"></i>
 
         </div>
     </header>
@@ -92,28 +103,3 @@
 </body>
 
 </html>
-
-
-<?php
-// Crea la conexion con la BD
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    try {
-        $mysqli = new mysqli("localhost", "root", "", "mn-php");
-    } catch (mysqli_sql_exception $e) {
-        echo "Error: " . $e->getMessage();
-    }
-}
-
-//Recupera los datos del formulario
-$password = $_POST['password'];
-$email = $_POST['email'];
-
-//Inserta los datos en la base de datos
-$query = "INSERT INTO usuarios (`email`, `password`) VALUES ('$email', '$password')";
-
-// Ejecuccion del Query
-$resultado = $mysqli->query($query);
-
-print_r($resultado);
-
-?>

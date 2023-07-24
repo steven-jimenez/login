@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+$_SESSION['userName'] = "$username";
+
+include 'conexion.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +45,7 @@
         </div>
         <div class="toogle">
             <div class="mini_img"></div>
-            <p>lalo rodriguez</p><i class="bi bi-caret-down-fill"></i>
+            <p><?php $username["username"] ?></p><i class="bi bi-caret-down-fill"></i>
 
         </div>
     </header>
@@ -63,19 +73,19 @@
             <form action="register.php" method="post">
                 <div class="inputs_edit">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name...">
+                    <input type="text" name="username" placeholder="Enter your name...">
 
                     <label for="bio">Bio</label>
-                    <textarea class="input_bio" placeholder=" Enter your bio..."></textarea>
+                    <textarea class="input_bio" name="bio" placeholder=" Enter your bio..."></textarea>
 
                     <label for="phone">Phone</label>
-                    <input type="text" id="phone" name="phone" placeholder="Enter your phone...">
+                    <input type="text" name="phone" placeholder="Enter your phone...">
 
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="Enter your email...">
+                    <input type="text" name="email" placeholder="Enter your email...">
 
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password...">
+                    <input type="password" name="password" placeholder="Enter your password...">
 
                     <button type="submit">Save</button>
                 </div>
